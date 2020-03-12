@@ -8,5 +8,13 @@ import (
 )
 
 func main() {
-	fmt.Println("CHASE")
+
+	var status int
+	var report Report
+	report.url = "https://bergcybersec.club"
+	status = ping(report.url)
+	if status == 200 {
+		fmt.Println("Valid Report")
+	}
+
 }
