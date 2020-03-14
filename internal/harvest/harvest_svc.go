@@ -9,7 +9,7 @@ import (
 
 //Report requires a url string
 type Report struct {
-	Url string
+	URL string
 }
 
 // Ping makes a HEAD request to the target URL

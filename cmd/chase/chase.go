@@ -1,21 +1,16 @@
 //CHASE
 //Concurrent Harvester for Adversary Studies & Examination
 
-package chase
+package main
 
 import (
-	"chase/internal/harvest"
-	"fmt"
+	"log"
+	"net/http"
 )
 
 func main() {
-
-	var status int
-	var report harvest.Report
-	report.Url = "https://bergcybersec.club"
-	status = harvest.Ping(report.Url)
-	if status == 200 {
-		fmt.Println("Valid Report")
-	}
+	http.HandleFunc("/", Harvest)
+	log.Print("CHASE running @ localhost:7000")
+	log.Fatal(http.ListenAndServe(":7000", nil))
 
 }
