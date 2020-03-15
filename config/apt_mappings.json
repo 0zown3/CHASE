@@ -1,0 +1,591 @@
+{
+    "admin@338":{
+        "groups": [
+            "admin@338"
+        ]
+    },
+    "APT1":{
+        "groups": [
+            "APT1",
+             "Comment Crew", 
+             "Comment Group", 
+             "Comment Panda"
+            ]
+    },
+    "APT12": {
+        "groups": [
+            "APT12", 
+            "IXESHE", 
+            "DynCalc", 
+            "Numbered Panda", 
+            "DNSCALC"
+        ]
+    },
+    "APT16": {
+        "groups": [
+            "APT16"
+        ]
+    },
+    "APT17": {
+        "groups": [
+            "APT17", 
+            "Deputy Dog"
+        ]
+    },
+    "APT18": {
+        "groups": [
+            "APT18", 
+            "TG-0416", 
+            "Dynamite Panda", 
+            "Threat Group-0416"
+        ]
+    },
+    "APT19": {
+        "groups": [
+            "APT19", 
+            "Codoso", 
+            "C0d0so0", 
+            "Codoso Team", 
+            "Sunshop Group"
+        ]
+    },
+    "APT28": {
+        "groups": [
+            "APT28", 
+            "SNAKEMACKEREL", 
+            "Swallowtail", 
+            "Group 74", 
+            "Sednit", 
+            "Sofacy", 
+            "Pawn Storm", 
+            "Fancy Bear", 
+            "STRONTIUM", 
+            "Tsar Team", 
+            "Threat Group-4127", 
+            "TG-4127"
+        ]
+    },
+    "APT29": {
+        "groups": [
+            "APT29",
+            "YTTRIUM", 
+            "The Dukes", 
+            "Cozy Bear", 
+            "CozyDuke"
+        ]
+    },
+    "ATP3": {
+        "groups": [
+            "APT3",
+            "Gothic Panda", 
+            "Pirpi", 
+            "UPS Team", 
+            "Buckeye", 
+            "Threat Group-0110", 
+            "TG-0110"
+        ]
+    },
+    "APT30": {
+        "groups": [
+            "APT30"
+        ]
+    },
+    "APT32": {
+        "groups": [
+            "APT32",
+            "SeaLotus", 
+            "OceanLotus", 
+            "APT-C-00"
+        ]
+    },
+    "APT33": {
+        "groups": [
+            "APT33",
+            "Elfin"
+        ]
+    },
+    "APT37": {
+        "groups": [
+            "APT37",
+            "ScarCruft", 
+            "Reaper", 
+            "Group123", 
+            "TEMP.Reape"
+        ]
+    },
+    "APT38": {
+        "groups": [
+            "APT38"
+        ]
+    },
+    "APT39": {
+        "groups": [
+            "APT39",
+            "Chafer"
+        ]
+    },
+    "APT41": {
+        "groups": [
+            "APT41"
+        ]
+    },
+    "Axiom": {
+        "groups": [
+            "Axiom",
+            "Group 72"
+        ] 
+    },
+    "BlackOasis": {
+        "groups": [
+            "BlackOasis"
+        ]
+    },
+    "BRONZE BUTLER": {
+        "groups": [
+            "BRONZE BUTLER",
+            "REDBALDKNIGHT",
+            "Tick"
+        ]
+    },
+    "Carbanak": {
+        "groups": [
+            "Carbanak", 
+            "Anunak", 
+            "Carbon Spider"
+        ]
+    },
+    "Charming Kitten": {
+        "groups": [
+            "Charming Kitten"
+        ]
+    },
+    "Cleaver": {
+        "groups": [
+            "Cleaver",
+            "Threat Group 2889",
+            "TG-2889"
+        ]
+    },
+    "Cobalt Group": {
+        "groups": [
+            "Cobalt Group",
+            "Cobalt Gang", 
+            "Cobalt Spider"
+        ]
+    },
+    "CopyKittens": {
+        "groups": [
+            "CopyKittens"
+        ]
+    },
+    "Dark Caracal": {
+        "groups": [
+            "Dark Caracal"
+        ]
+    },
+    "Darkhotel": {
+        "groups": [
+            "Darkhotel"
+        ]
+    },
+    "DarkHydrus": {
+        "groups": [
+            "DarkHydrus"
+        ]
+    },
+    "Deep Panda": {
+        "groups": [
+            "Deep Panda", 
+            "Shell Crew", 
+            "WebMasters", 
+            "KungFu Kittens", 
+            "PinkPanther", 
+            "Black Vine"
+        ]
+    },
+    "Dragonfly": {
+        "groups": [
+            "Dragonfly",
+            "Energetic Bear"
+        ]
+    },
+    "Dragonfly 2.0": {
+        "groups": [
+            "Dragonfly 2.0",
+            "Berserk Bear"
+        ]
+    },
+    "DragonOK": {
+        "groups": [
+            "Dragon0K"
+        ]
+    },
+    "Dust Storm": {
+        "groups": [
+            "Dust Storm"
+        ]
+    },
+    "Elderwood": {
+        "groups": [
+            "Elderwood", 
+            "Elderwood Gang", 
+            "Beijing Group", 
+            "Sneaky Panda"
+        ]
+    },
+    "Equation": {
+        "groups": [
+            "Equation"
+        ]
+    },
+    "FIN10": {
+        "groups": [
+            "FIN10"
+        ]
+    },
+    "FIN4": {
+        "groups": [
+            "FIN4"
+        ]
+    },
+    "FIN5": {
+        "groups": [
+            "FIN5"
+        ]
+    },
+    "FIN6": {
+        "groups": [
+            "FIN6",
+            "ITG08"
+        ]
+    },
+    "FIN7": {
+        "groups": [
+            "FIN7"
+        ]
+    },
+    "FIN8": {
+        "groups": [
+            "FIN8"
+        ]
+    },
+    "Gallmaker": {
+        "groups": [
+            "Gallmaker"
+        ]
+    },
+    "Gamaredon Group": {
+        "groups": [
+            "Gamaredon Group"
+        ]
+    },
+    "GCMAN": {
+        "groups": [
+            "GCMAN"
+        ]
+    },
+    "Gorgon Group": {
+        "groups": [
+            "Gorgon Group"
+        ]
+    },
+    "Group5": {
+        "groups": [
+            "Group5"
+        ]
+    },
+    "Honeybee": {
+        "groups": [
+            "Honeybee"
+        ]
+    },
+    "Ke3chang": {
+        "groups": [
+            "Ke3chang"
+        ]
+    },
+    "Kimsuky": {
+        "groups": [
+            "Kimsuky"
+        ]
+    },
+    "Lazarus Group": {
+        "groups": [
+            "Lazarus Group",
+            "HIDDEN COBRA", 
+            "Guardians of Peace", 
+            "ZINC", 
+            "NICKEL ACADEMY"
+        ]
+    },
+    "Leafminer": {
+        "groups": [
+            "Leafminer",
+            "Raspite"
+        ]
+    },
+    "Leviathan": {
+        "groups": [
+            "Leviathan",
+            "TEMP.Jumper", 
+            "APT40", 
+            "TEMP.Periscope"
+        ]
+    },
+    "Lotus Blossom": {
+        "groups": [
+            "Lotus Blossom",
+            "DRAGONFISH", 
+            "Spring Dragon"
+        ]
+    },
+    "Machete": {
+        "groups": [
+            "Machete",
+            "El Machete"
+        ]
+    },
+    "Magic Hound": {
+        "groups": [
+            "Magic Hound",
+            "Rocket Kitten", 
+            "Operation Saffron Rose", 
+            "Ajax Security Team", 
+            "Operation Woolen-Goldfish", 
+            "Newscaster", 
+            "Cobalt Gypsy", 
+            "APT35"
+        ]
+    },
+    "menuPass": {
+        "groups": [
+            "menuPass",
+            "Stone Panda", 
+            "APT10", 
+            "Red Apollo", 
+            "CVNX", 
+            "HOGFISH"
+        ]
+    },
+    "Moafee": {
+        "groups": [
+            "Moafee"
+        ]
+    },
+    "Molerats": {
+        "groups": [
+            "Molerats",
+            "Operation Molerats", 
+            "Gaza Cybergang"
+        ]
+    },
+    "MuddyWater": {
+        "groups": [
+            "MuddyWater",
+            "Seedworm", 
+            "TEMP.Zagros"
+        ]
+    },
+    "Naikon": {
+        "groups": [
+            "Naikon"
+        ]
+    },
+    "NEODYMIUM": {
+        "groups": [
+            "NEODYMIUM"
+        ]
+    },
+    "Night Dragon": {
+        "groups": [
+            "Night Dragon"
+        ]
+    },
+    "OilRig": {
+        "groups": [
+            "OilRig",
+            "IRN2", 
+            "HELIX KITTEN", 
+            "APT34"
+        ]
+    },
+    "Orangeworm": {
+        "groups": [
+            "Orangeworm"
+        ]
+    },
+    "Patchwork": {
+        "groups": [
+            "Patchwork",
+            "Dropping Elephant", 
+            "Chinastrats", 
+            "MONSOON", 
+            "Operation Hangover"
+        ]
+    },
+    "PittyTiger": {
+        "groups": [
+            "PittyTiger"
+        ]
+    },
+    "PLATINUM": {
+        "groups": [
+            "PLATINUM"
+        ]
+    },
+    "Poseidon Group": {
+        "groups": [
+            "Poseidon Group"
+        ]
+    },
+    "PROMETHIUM": {
+        "groups": [
+            "PROMETHIUM"
+        ]
+    },
+    "Putter Panda": {
+        "groups": [
+            "Putter Panda",
+            "APT2", 
+            "MSUpdater"
+        ]
+    },
+    "Rancor": {
+        "groups": [
+            "Rancor"
+        ]
+    },
+    "RTM": {
+        "groups": [
+            "RTM"
+        ]
+    },
+    "Sandworm Team": {
+        "groups": [
+            "Sandworm Team",
+            "Quedagh", 
+            "VOODOO BEAR"
+        ]
+    },
+    "Scarlet Mimic": {
+        "groups": [
+            "Scarlet Mimic"
+        ]
+    },
+    "Silence": {
+        "groups": [
+            "Silence"
+        ]
+    },
+    "SilverTerrier": {
+        "groups": [
+            "SilverTerrier"
+        ]
+    },
+    "Soft Cell": {
+        "groups": [
+            "Soft Cell"
+        ]
+    },
+    "Sowbug": {
+        "groups": [
+            "Sowbug"
+        ]
+    },
+    "Stealth Falcon": {
+        "groups": [
+            "Stealth Falcon"
+        ]
+    },
+    "Stolen Pencil": {
+        "groups": [
+            "Stolen Pencil"
+        ]
+    },
+    "Strider": {
+        "groups": [
+            "Strider",
+            "ProjectSauron"
+        ]
+    },
+    "Suckfly": {
+        "groups": [
+            "Suckfly"
+        ]
+    },
+    "TA459": {
+        "groups": [
+            "TA459"
+        ]
+    },
+    "TA505": {
+        "groups": [
+            "TA505"
+        ]
+    },
+    "Taidoor": {
+        "groups": [
+            "Taidoor"
+        ]
+    },
+    "TEMP.Veles": {
+        "groups": [
+            "TEMP.Veles",
+            "XENOTIME"
+        ]
+    },
+    "The White Company": {
+        "groups": [
+            "The White Company"
+        ]
+    },
+    "Threat Group-1314": {
+        "groups": [
+            "Threat Group-1314",
+            "TG-1314"
+        ]
+    },
+    "Threat Group-3390": {
+        "groups": [
+            "Threat Group-3390",
+            "TG-3390", 
+            "Emissary Panda", 
+            "BRONZE UNION", 
+            "APT27", 
+            "Iron Tiger", 
+            "LuckyMouse"
+        ]
+    },
+    "Thrip": {
+        "groups": [
+            "Thrip"
+        ]
+    },
+    "Tropic Trooper": {
+        "groups": [
+            "Tropic Trooper",
+            "KeyBoy"
+        ]
+    },
+    "Turla": {
+        "groups": [
+            "Turla",
+            "Waterbug", 
+            "WhiteBear", 
+            "VENOMOUS BEAR", 
+            "Snake", 
+            "Krypton"
+        ]
+    },
+    "Winnti Group": {
+        "groups": [
+            "Winnti Group",
+            "Backfly"
+        ]
+    },
+    "WIRTE": {
+        "groups": [
+            "WIRTE"
+        ]
+    }
+}
