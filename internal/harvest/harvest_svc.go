@@ -3,6 +3,7 @@
 package harvest
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 )
@@ -10,6 +11,12 @@ import (
 //Report requires a url string
 type Report struct {
 	URL string
+}
+
+//FetchRports accepts a dtg and apt string
+func FetchReports(dtg string, apt string) {
+	fmt.Println(dtg)
+	fmt.Println(apt)
 }
 
 // Ping makes a HEAD request to the target URL
