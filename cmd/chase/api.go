@@ -1,8 +1,8 @@
 package main
 
 import (
+	"chase/internal/harvest"
 	"encoding/json"
-	"fmt"
 	"net/http"
 )
 
@@ -26,14 +26,9 @@ func StartHarvest(w http.ResponseWriter, r *http.Request) {
 		}
 		dtg := data.DTG
 		apt := data.APT
-		fetchReports(dtg, apt)
+		harvest.FetchReports(dtg, apt)
 	default:
 		w.WriteHeader(http.StatusNotFound)
 		w.Write([]byte(`{"harvest_status": "invalid method"}`))
 	}
-}
-
-func fetchReports(dtg string, apt string) {
-	fmt.Println(dtg)
-	fmt.Println(apt)
 }
