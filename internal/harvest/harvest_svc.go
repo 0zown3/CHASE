@@ -3,9 +3,12 @@
 package harvest
 
 import (
+	"encoding/json"
 	"fmt"
+	"io/ioutil"
 	"log"
 	"net/http"
+	"os"
 )
 
 //Report requires a url string
@@ -13,10 +16,23 @@ type Report struct {
 	URL string
 }
 
-//FetchRports accepts a dtg and apt string
+//Domains is the struct used for unmarshalling the allowed_domains json file.
+type Domains struct {
+	Domains []string `json:"domains"`
+}
+
+func loadDomains() []string {
+	var domains Domains
+	jsonFile, _ := os.Open("../../config/allowed_domains.json")
+	byteValue, _ := ioutil.ReadAll(jsonFile)
+	json.Unmarshal(byteValue, &domains)
+	return domains.Domains
+}
+
+//FetchReports accepts a dtg and apt string
 func FetchReports(dtg string, apt string) {
-	fmt.Println(dtg)
-	fmt.Println(apt)
+	allowedDomains := loadDomains()
+	fmt.Println(allowedDomains)
 }
 
 // Ping makes a HEAD request to the target URL
