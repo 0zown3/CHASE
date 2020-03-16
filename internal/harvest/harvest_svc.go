@@ -23,9 +23,18 @@ type Domains struct {
 	Domains []string `json:"domains"`
 }
 
+//Groups is the interface for the group subkey of apt_mappings.json
+type Groups struct {
+	Groups []string `json:"groups"`
+}
+
+//APTMappings is the interface for unmarshaling apt_mappings.json
+type APTMappings map[string]Groups
+
 //FetchReports accepts a dtg and apt string
 func FetchReports(dtg string, apt string) {
 	allowedDomains := loadDomains()
+	aptMappings := loadAPTMappings()
 	for i := 0; i <= len(allowedDomains)-1; i++ {
 		c := colly.NewCollector(
 			colly.AllowedDomains(allowedDomains[i]),
@@ -33,7 +42,7 @@ func FetchReports(dtg string, apt string) {
 		)
 		if allowedDomains[i] == "www.fireeye.com" {
 			url := constructFireeyeURL(dtg, allowedDomains[i])
-			fireeyeHarvester(url, apt, c)
+			fireeyeHarvester(url, apt, aptMappings, c)
 		}
 	}
 }
@@ -45,6 +54,14 @@ func loadDomains() []string {
 	byteValue, _ := ioutil.ReadAll(jsonFile)
 	json.Unmarshal(byteValue, &domains)
 	return domains.Domains
+}
+
+func loadAPTMappings() APTMappings {
+	var aptMappings APTMappings
+	jsonFile, _ := os.Open("../../config/apt_mappings.json")
+	byteValue, _ := ioutil.ReadAll(jsonFile)
+	json.Unmarshal(byteValue, &aptMappings)
+	return aptMappings
 }
 
 func constructFireeyeURL(dtg string, domain string) string {
@@ -60,11 +77,18 @@ func getFireeyeSuffix(dtg string) string {
 	return suffix
 }
 
-func fireeyeHarvester(url string, apt string, c *colly.Collector) {
+func fireeyeHarvester(url string, apt string, aptMappings APTMappings, c *colly.Collector) {
+	mappings := aptMappings[apt].Groups
+	if len(mappings) == 0 {
+		log.Printf("Currently no mappings for %s", apt)
+		return
+	}
 	c.OnHTML("h4", func(e *colly.HTMLElement) {
-		if strings.Contains(e.Text, apt) {
-			articleTitle := e.Text
-			fmt.Println(articleTitle)
+		for i := 0; i <= len(mappings)-1; i++ {
+			if strings.Contains(e.Text, mappings[i]) {
+				articleTitle := e.Text
+				fmt.Println(articleTitle)
+			}
 		}
 	})
 	log.Printf("Crawling %s for reports relating to %s", url, apt)
