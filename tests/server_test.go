@@ -1,7 +1,9 @@
 package tests
 
 import (
+	"bytes"
 	"chase/internal/chase"
+	"encoding/json"
 	"net/http"
 	"net/http/httptest"
 	"testing"
@@ -10,17 +12,17 @@ import (
 //TestServer tests the response code returned by ChaseServer
 func TestServer(t *testing.T) {
 	t.Run("returns response from fetching related APT urls", func(t *testing.T) {
-		//This nil needs to be replaced with appropriate body data.
-		request, _ := http.NewRequest(http.MethodPost, "/", nil)
+		requestBody := constructBody()
+		jsonBody, _ := json.Marshal(requestBody)
+
+		request, _ := http.NewRequest(http.MethodPost, "/", bytes.NewBuffer(jsonBody))
 		response := httptest.NewRecorder()
 
 		chase.Server(response, request)
 
-		got := response.Code
-		want := 200
-
-		if got != want {
-			t.Errorf("got %q, want %q", got, want)
-		}
+		assertStatus(t, response.Code, 200)
+		assertResponse(t, response.Body.String(), "APT28")
 	})
 }
+
+//TODO: Need utility function to assert on response type (aka slice)

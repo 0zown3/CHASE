@@ -1,6 +1,13 @@
 package chase
 
-import "net/http"
+import (
+	"fmt"
+	"net/http"
+)
 
-//Server starts the main application
-func Server(writer http.ResponseWriter, request *http.Request) {}
+//Server is the handler function for the CHASE server
+//that returns a slice of all APT related urls
+func Server(writer http.ResponseWriter, request *http.Request) {
+	apt := DecodeBody(request.Body)
+	fmt.Fprint(writer, apt)
+}

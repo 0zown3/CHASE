@@ -8,9 +8,9 @@ import (
 )
 
 func main() {
-	handler := http.HandlerFunc(chase.Server)
+	serverHandler := http.HandlerFunc(chase.Server)
 	fmt.Print("Running CHASE on localhost:7000")
-	if err := http.ListenAndServe(":7000", handler); err != nil {
+	if err := http.ListenAndServe(":7000", serverHandler); err != nil {
 		log.Fatalf("Unable to start CHASE server on port 7000 %v", err)
 	}
 }
