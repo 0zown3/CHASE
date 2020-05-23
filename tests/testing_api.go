@@ -2,6 +2,7 @@ package tests
 
 import (
 	"chase/internal/chase"
+	"reflect"
 	"testing"
 )
 
@@ -30,5 +31,12 @@ func assertEquals(t *testing.T, got, want string) {
 	t.Helper()
 	if got != want {
 		t.Errorf("Incorrect status: got %s, want %s", got, want)
+	}
+}
+
+func assertType(t *testing.T, got, want reflect.Type) {
+	t.Helper()
+	if got != want {
+		t.Errorf("Incorrect types: got %T, want %T", got, want)
 	}
 }
