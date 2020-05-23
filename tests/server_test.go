@@ -14,14 +14,10 @@ func TestServer(t *testing.T) {
 	t.Run("returns response from fetching related APT urls", func(t *testing.T) {
 		requestBody := constructBody()
 		jsonBody, _ := json.Marshal(requestBody)
-
 		request, _ := http.NewRequest(http.MethodPost, "/", bytes.NewBuffer(jsonBody))
 		response := httptest.NewRecorder()
-
 		chase.Server(response, request)
-
 		assertStatus(t, response.Code, 200)
-		assertResponse(t, response.Body.String(), "APT28")
 	})
 }
 
