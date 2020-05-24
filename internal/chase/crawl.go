@@ -24,9 +24,5 @@ func GetReportUrls(requestBody io.ReadCloser) {
 	for i := range aliases {
 		urls = append(urls, aliases[i])
 	}
-	sendToTRAM(urls)
-}
-
-func sendToTRAM(urls []string) {
-	//TODO: Implement me
+	SendToTRAM(urls)
 }
