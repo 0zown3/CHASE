@@ -1,7 +1,11 @@
 package tests
 
 import (
+	"bytes"
 	"chase/internal/chase"
+	"encoding/json"
+	"io"
+	"net/http"
 	"reflect"
 	"testing"
 )
@@ -39,4 +43,11 @@ func assertType(t *testing.T, got, want reflect.Type) {
 	if got != want {
 		t.Errorf("Incorrect types: got %T, want %T", got, want)
 	}
+}
+
+func getRequestBody() io.ReadCloser {
+	requestBody := constructBody()
+	jsonBody, _ := json.Marshal(requestBody)
+	request, _ := http.NewRequest(http.MethodPost, "/", bytes.NewBuffer(jsonBody))
+	return request.Body
 }
