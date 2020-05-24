@@ -7,22 +7,21 @@ import (
 //GetReportUrls fetches the relevant report urls per APT alias
 func GetReportUrls(requestBody io.ReadCloser) {
 	/*
-		We need to setup a channel in this function to handle
-		responses appending to the urls slice. Additionally, in
-		the for loop, we need to make a goroutine call to the
-		function that fetches report urls for each alias.
+		TRAM's /rest endpoint isn't expecting an array of urls to be passed
+		to insert_reports. We need to send individual POST requests containing
+		the title and url of each report.
 
-		i.e.
+		Therefore, in addition to creating goroutines for fetching reports per alias,
+		we also need to concurrently send individual requests to the /rest endpoint
+		for each URL we collect.
 
-		urls = append(urls, go crawl(aliases[i]))
-
-		something along those lines should work..
+		So we can't pass a slice to SendToTRAM, we must define a new interface to
+		store this data.
 	*/
-	var urls []string
 	apt := DecodeBody(requestBody)
 	aliases := GetAliases(apt)
 	for i := range aliases {
-		urls = append(urls, aliases[i])
+		//go gather(aliases[i])
+		//something like that
 	}
-	SendToTRAM(urls)
 }
