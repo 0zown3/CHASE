@@ -11,6 +11,8 @@ will aid in training TRAMs model and also help analysts gather relevant reports 
 
 Usage
 ---------------
+`cd tests\`  
+`go test` # verify app passes all tests  
 `cd cmd\chase`  
 `go build`  
 `./chase.exe`  
