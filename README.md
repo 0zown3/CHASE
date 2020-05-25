@@ -24,11 +24,26 @@ Send a POST to http://localhost:7000/ with the following body:
 }
 ```
 The string in the APT field MUST correspond to an ATT&CK mapping (i.e. APT28).  
-See: https://attack.mitre.org/groups/  
+See: https://attack.mitre.org/groups/
+
+How it Works
+---------------
+
+This POST request will kick off operations. CHASE will use that APT string as a key to fetch known aliases for that adversary from apt_mappings.json in /config.
+
+From there, concurrent calls will be made to the main crawling function that will continuously feed TRAM's REST API with report URLs until it's finished. 
+
+Impact
+----------------
+
+There is an immense backlog of threat reports that the ATT&CK team (and others) still need to analyze and map to ATT&CK to strengthen their detection mechanisms. CHASE will help alleviate the still manual process of finding relevant reports to
+provide to TRAM by searching the Internet for them. 
+
+The analyst can then predominantly focus on verifying TRAM's results and continuing to train its model. 
 
 
 TODO
 --------------
 - Gather relevant URLs per specified APT and their aliases.
-- Communicate with TRAM instance and send array to endpoint.
+- Communicate with TRAM's REST API.
 - Dockerize CHASE.

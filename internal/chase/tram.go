@@ -1,7 +1,7 @@
 package chase
 
 //SendToTRAM communicates with the TRAM endpoint that ingests report urls
-func SendToTRAM(tramRequest TRAMRequest) {
+func SendToTRAM(requestBody TRAMRequest) {
 	//TODO: Implement me
 	/*
 		We need to POST to the endpoint defined here:
