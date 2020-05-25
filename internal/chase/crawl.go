@@ -1,20 +1,15 @@
 package chase
 
-import (
-	"io"
-)
-
-//Chase fetches the relevant report urls per APT alias
-func Chase(requestBody io.ReadCloser) {
-	apt := DecodeBody(requestBody)
-	aliases := GetAliases(apt)
-	for i := range aliases {
-		go getReports(aliases[i])
-	}
+//Chase fetches the relevant report urls
+func Chase() {
+	getReports()
 }
 
-func getReports(alias string) {
+func getReports() {
 	//TODO: Implement me
+
+	//https://www.google.com/search?q=Fancy+Bear&num=10000
+	//painfully parse these results..?
 
 	/*
 		This function shouldn't return anything, rather it
