@@ -21,9 +21,7 @@ Send a POST to http://localhost:7000/
 How it Works
 ---------------
 
-This POST request will kick off operations. CHASE will use that APT string as a key to fetch known aliases for that adversary from apt_mappings.json in /config.
-
-From there, concurrent calls will be made to the main crawling function that will continuously feed TRAM's REST API with report URLs until it's finished. 
+This POST request will kick off operations. From there, concurrent calls will be made to the main crawling function that will continuously feed TRAM's REST API with report URLs until it's finished. 
 
 Impact
 ----------------
@@ -36,6 +34,6 @@ The analyst can then predominantly focus on verifying TRAM's results and continu
 
 TODO
 --------------
-- Gather relevant URLs per specified APT and their aliases.
+- Gather relevant URLs.
 - Communicate with TRAM's REST API.
 - Dockerize CHASE.
