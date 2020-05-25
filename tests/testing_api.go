@@ -12,8 +12,8 @@ import (
 
 //This is the API used to facilitate tests
 
-func constructBody() chase.RequestBody {
-	return chase.RequestBody{"APT28"}
+func constructBody() chase.Request {
+	return chase.Request{"test123"}
 }
 
 func assertStatus(t *testing.T, got, want int) {

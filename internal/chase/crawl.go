@@ -1,15 +1,24 @@
 package chase
 
 //Chase fetches the relevant report urls
-func Chase() {
-	getReports()
+func Chase(token string) {
+	getReports(token)
 }
 
-func getReports() {
+func getReports(token string) {
 	//TODO: Implement me
 
-	//https://www.google.com/search?q=Fancy+Bear&num=10000
-	//painfully parse these results..?
+	/*
+		We might be able to utilize the feedly API here and parse
+		the results of the blogs...this is definitely easier
+		than writing specific parsing code for each security blog.
+
+		https://cloud.feedly.com/v3/streams/contents?streamId=feed%2Fhttp%3A%2F%2Fwww.fireeye.com%2Fblog%2Ffeed
+
+		oauth: A2jGKuUNsybN2Wmsg7-lPcTxVdRJjpMb6at4mVAue3LMrKKiQpezqjDfJhpRFOAnmFaIOKq_7iSCra78-fUEmDFIOBOeHw6IJukFACG1IaWFWXnvBFEZprwpQ4NrZ1iiGzbO2Dvo75Dk4W2UA58OBndDydV8WNNWaw8sfaMry25j4hFYCv0O3MeGH9LFcU0kLWwWKR7sfsWkrf0InqQ3c50Gya0FnrW2DSHkJb1IVTmc12zMo6IacG4xqDC9:feedlydev
+
+		We should accept the oauth token in the POST body to chase.
+	*/
 
 	/*
 		This function shouldn't return anything, rather it
