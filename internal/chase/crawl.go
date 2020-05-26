@@ -17,7 +17,6 @@ func getReports(token string) {
 
 		oauth: A2jGKuUNsybN2Wmsg7-lPcTxVdRJjpMb6at4mVAue3LMrKKiQpezqjDfJhpRFOAnmFaIOKq_7iSCra78-fUEmDFIOBOeHw6IJukFACG1IaWFWXnvBFEZprwpQ4NrZ1iiGzbO2Dvo75Dk4W2UA58OBndDydV8WNNWaw8sfaMry25j4hFYCv0O3MeGH9LFcU0kLWwWKR7sfsWkrf0InqQ3c50Gya0FnrW2DSHkJb1IVTmc12zMo6IacG4xqDC9:feedlydev
 
-		We should accept the oauth token in the POST body to chase.
 	*/
 
 	/*
@@ -26,14 +25,28 @@ func getReports(token string) {
 
 		PSUEDOCODE:
 
-		request := TRAMRequest{'insert_report', 'none', 'none'}
+		for each url in config.json {
+			feedlyResp := go FetchBlogs(url)
+			for each Blog in feedlyResp.Items {
+				var request TRAMRequest
+				request.title = feedlyResp.Items[i].Blogs.Title
+				request.url = feedlyResp.Items[i].Blogs.OriginID
+				go SendToTRAM(request)
+			}
 
-		crawling code here... (colly?)
-		parse crawling response
-		request.title = parsing result
-		request.url = parsing result
-		SendToTRAM(request)
+		}
 	*/
-	requestBody := TRAMRequest{"insert_report", "", ""}
-	SendToTRAM(requestBody)
+	var feed int
+	var blog int
+	feeds := GetFeeds()
+	for feed = range feeds {
+		url := "http://cloud.freedly.com/v3/streams/contents?streamId=" + feeds[feed]
+		feedlyResp := FetchBlogs(url, token)
+		for blog = range feedlyResp.Items {
+			var tramRequest TRAMRequest
+			tramRequest.title = feedlyResp.Items[blog].Title
+			tramRequest.title = feedlyResp.Items[blog].OriginID
+			go SendToTRAM(tramRequest)
+		}
+	}
 }

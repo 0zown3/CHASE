@@ -29,3 +29,8 @@ type Blogs struct {
 	OriginID string `json:"originId"`
 	Title    string `json:"title"`
 }
+
+//Feeds is used to unmarshal feeds.json
+type Feeds struct {
+	Feeds []string `json:"feeds"`
+}
