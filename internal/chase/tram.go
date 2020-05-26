@@ -20,5 +20,4 @@ func SendToTRAM(requestBody TRAMRequest) {
 		within insert_report, title and url are used.
 
 	*/
-
 }

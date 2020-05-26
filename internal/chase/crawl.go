@@ -9,7 +9,7 @@ func getReports(token string) {
 	var feed int
 	feeds := GetFeeds()
 	for feed = range feeds {
-		url := "http://cloud.feedly.com/v3/streams/contents?streamId=" + feeds[feed]
+		url := "https://cloud.feedly.com/v3/streams/contents?streamId=" + feeds[feed]
 		feedlyResp := FetchBlogs(url, token)
 		go feedTram(feedlyResp.Items)
 	}
