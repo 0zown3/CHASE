@@ -7,16 +7,20 @@ func Chase(token string) {
 
 func getReports(token string) {
 	var feed int
-	var blog int
 	feeds := GetFeeds()
 	for feed = range feeds {
 		url := "http://cloud.feedly.com/v3/streams/contents?streamId=" + feeds[feed]
 		feedlyResp := FetchBlogs(url, token)
-		for blog = range feedlyResp.Items {
-			var tramRequest TRAMRequest
-			tramRequest.title = feedlyResp.Items[blog].Title
-			tramRequest.url = feedlyResp.Items[blog].OriginID
-			go SendToTRAM(tramRequest)
-		}
+		go feedTram(feedlyResp.Items)
+	}
+}
+
+func feedTram(blogs []Blogs) {
+	var blog int
+	for blog = range blogs {
+		var tramRequest TRAMRequest
+		tramRequest.title = blogs[blog].Title
+		tramRequest.url = blogs[blog].OriginID
+		go SendToTRAM(tramRequest)
 	}
 }
