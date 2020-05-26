@@ -3,7 +3,6 @@ package chase
 import (
 	"context"
 	"encoding/json"
-	"fmt"
 	"io"
 	"io/ioutil"
 	"os"
@@ -37,7 +36,5 @@ func FetchBlogs(url string, token string) FeedlyResponse {
 	}))
 	response, _ := client.Get(url)
 	json.NewDecoder(response.Body).Decode(&feedlyResp)
-	//Why isn't this decoding properly?
-	fmt.Println(feedlyResp.FeedTitle)
 	return feedlyResp
 }

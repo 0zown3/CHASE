@@ -10,12 +10,12 @@ func getReports(token string) {
 	var blog int
 	feeds := GetFeeds()
 	for feed = range feeds {
-		url := "http://cloud.freedly.com/v3/streams/contents?streamId=" + feeds[feed]
+		url := "http://cloud.feedly.com/v3/streams/contents?streamId=" + feeds[feed]
 		feedlyResp := FetchBlogs(url, token)
 		for blog = range feedlyResp.Items {
 			var tramRequest TRAMRequest
 			tramRequest.title = feedlyResp.Items[blog].Title
-			tramRequest.title = feedlyResp.Items[blog].OriginID
+			tramRequest.url = feedlyResp.Items[blog].OriginID
 			go SendToTRAM(tramRequest)
 		}
 	}

@@ -1,7 +1,5 @@
 package chase
 
-import "fmt"
-
 //SendToTRAM communicates with the TRAM endpoint that ingests report urls
 func SendToTRAM(requestBody TRAMRequest) {
 	//TODO: Implement me
@@ -22,6 +20,5 @@ func SendToTRAM(requestBody TRAMRequest) {
 		within insert_report, title and url are used.
 
 	*/
-	fmt.Println(requestBody.title)
 
 }
