@@ -19,3 +19,15 @@ func TestDecodeBody(t *testing.T) {
 		assertEquals(t, got, want)
 	})
 }
+
+//TestFetchBlogs mocks an API call to the Feedly API and tests the unmarshalled response
+func TestFetchBlogs(t *testing.T) {
+	t.Run("tests the function that makes a request to Feedly's API", func(t *testing.T) {
+		var feedlyResp chase.FeedlyResponse
+		testServer := feedlyResponseStub()
+		defer testServer.Close()
+		response, _ := http.Get(testServer.URL)
+		json.NewDecoder(response.Body).Decode(&feedlyResp)
+		assertEquals(t, feedlyResp.FeedTitle, "Test Title")
+	})
+}
