@@ -16,31 +16,26 @@ func TestDecodeBody(t *testing.T) {
 		jsonBody, _ := json.Marshal(requestBody)
 		request, _ := http.NewRequest(http.MethodPost, "/", bytes.NewBuffer(jsonBody))
 		got := chase.DecodeBody(request.Body)
-		want := "APT28"
+		want := "test123"
 		assertEquals(t, got, want)
 	})
 }
 
-//TestGetAliases tests the return type of chase.GetAliases (we want []string)
-func TestGetAliases(t *testing.T) {
-	t.Run("returns array of aliases from apt_mappings.json", func(t *testing.T) {
-		var groups []string
-		var testGroups []string
-		var apt string
-		apt = "APT28"
-		groups = chase.GetAliases(apt)
-		got := reflect.TypeOf(groups)
-		want := reflect.TypeOf(testGroups)
-		assertType(t, got, want)
+//TestFetchBlogs mocks an API call to the Feedly API and tests the unmarshalled
+func TestFetchBlogs(t *testing.T) {
+	t.Run("tests the function that makes a request to Feedly's API", func(t *testing.T) {
+		testServer := feedlyResponseStub()
+		defer testServer.Close()
+		feedlyResp := chase.FetchBlogs(testServer.URL, "fake")
+		assertEquals(t, feedlyResp.FeedTitle, "Test Title")
 	})
 }
 
-//TestGetAPTMappings tests the chase.GetAPTMappings utility
-func TestGetAPTMappings(t *testing.T) {
-	t.Run("tests chase.ReadFile utility", func(t *testing.T) {
-		var testMappings chase.APTMappings
-		got := chase.GetAPTMappings()
-		want := reflect.TypeOf(testMappings)
+func TestGetFeeds(t *testing.T) {
+	t.Run("tests the function that gets all supported feeds", func(t *testing.T) {
+		var testFeeds chase.Feeds
+		got := chase.GetFeeds()
+		want := reflect.TypeOf(testFeeds.Feeds)
 		assertType(t, reflect.TypeOf(got), want)
 	})
 }
