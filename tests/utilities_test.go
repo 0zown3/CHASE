@@ -5,6 +5,7 @@ import (
 	"chase/internal/chase"
 	"encoding/json"
 	"net/http"
+	"reflect"
 	"testing"
 )
 
@@ -25,7 +26,16 @@ func TestFetchBlogs(t *testing.T) {
 	t.Run("tests the function that makes a request to Feedly's API", func(t *testing.T) {
 		testServer := feedlyResponseStub()
 		defer testServer.Close()
-		feedlyResp := chase.FetchBlogs(testServer.URL)
+		feedlyResp := chase.FetchBlogs(testServer.URL, "fake")
 		assertEquals(t, feedlyResp.FeedTitle, "Test Title")
+	})
+}
+
+func TestGetFeeds(t *testing.T) {
+	t.Run("tests the function that gets all supported feeds", func(t *testing.T) {
+		var testFeeds chase.Feeds
+		got := chase.GetFeeds()
+		want := reflect.TypeOf(testFeeds.Feeds)
+		assertType(t, reflect.TypeOf(got), want)
 	})
 }
