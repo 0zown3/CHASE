@@ -1,23 +1,18 @@
 package chase
 
+import (
+	"bytes"
+	"encoding/json"
+	"fmt"
+	"net/http"
+)
+
 //SendToTRAM communicates with the TRAM endpoint that ingests report urls
-func SendToTRAM(requestBody TRAMRequest) {
-	//TODO: Implement me
-	/*
-		We need to POST to the endpoint defined here:
-		https://github.com/mitre-attack/tram/blob/master/handlers/web_api.py#L30
-
-		this would be /rest
-
-		the /rest endpoint is looking for:
-
-		data = {
-			'index': 'insert_report',
-			'title': str
-			'url': str
-		}
-
-		within insert_report, title and url are used.
-
-	*/
+func SendToTRAM(tramBody TRAMRequest) {
+	//endpoint can't remain hardcoded, needs to be more dynamic if deployed in container env
+	endpoint := "http://localhost:9999/rest"
+	contentType := "application/json"
+	requestBody, _ := json.Marshal(tramBody)
+	fmt.Printf("Sending %s report to TRAM!\n", tramBody.Title[0])
+	http.Post(endpoint, contentType, bytes.NewBuffer(requestBody))
 }

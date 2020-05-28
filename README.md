@@ -46,6 +46,4 @@ The analyst can then predominantly focus on verifying TRAM's results and continu
 
 TODO
 --------------
-- Gather relevant URLs.
-- Communicate with TRAM's REST API.
 - Dockerize CHASE.
