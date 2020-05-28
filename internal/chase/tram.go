@@ -13,11 +13,12 @@ func SendToTRAM(requestBody TRAMRequest) {
 
 		data = {
 			'index': 'insert_report',
-			'title': str
-			'url': str
+			'title': []
+			'url': []
 		}
 
 		within insert_report, title and url are used.
 
+		Technically, TRAM can handle arrays for both title and url, but it's more efficient to send reports one by one
 	*/
 }
