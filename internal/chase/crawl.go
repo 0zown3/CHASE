@@ -19,8 +19,9 @@ func feedTram(blogs []Blogs) {
 	var blog int
 	for blog = range blogs {
 		var tramRequest TRAMRequest
-		tramRequest.title = blogs[blog].Title
-		tramRequest.url = blogs[blog].OriginID
+		tramRequest.Index = "insert_report"
+		tramRequest.Title[0] = blogs[blog].Title
+		tramRequest.URL[0] = blogs[blog].OriginID
 		go SendToTRAM(tramRequest)
 	}
 }

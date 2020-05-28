@@ -7,9 +7,9 @@ type Request struct {
 
 //TRAMRequest is the structure that stores the necessary data to be sent to TRAM
 type TRAMRequest struct {
-	index string //insert_report
-	title string
-	url   string
+	Index string    `json:"index"`
+	Title [1]string `json:"title"`
+	URL   [1]string `json:"url"`
 }
 
 //FeedlyRequest is the struct for building the request body for a feedly API call
