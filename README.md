@@ -4,44 +4,54 @@
 Capability
 ---------------
 CHASE is a plugin for the TRAM tool developed by MITRE. TRAM leverages machine learning to detect
-TTPs in threat reports and map them to adversaries.  
+TTPs in threat reports and map them to ATT&CK.  
 
-The main goal of CHASE is to quickly gather large amounts of relevant threat report URLs and feed them into TRAM. TRAM will then queue up those urls and begin its work. 
+The main goal of CHASE is to quickly gather large amounts of relevant threat report URLs and feed them into TRAM. In doing so, we can quickly help
+analysts strengthen TRAM's model and improve its capability.
 
 How it Works
 ---------------
 
-To start things off, you simply need to send a POST request to localhost:7000 (when CHASE is running, or whichever port you choose to expose in a Docker/k8s environment).  
+CHASE integrates the Feedly Cloud API. Feedly is a service that aggregates blogs based on your interest and provides an API that easily lets you access that data programmatically. We leverage this API to help us fetch relevant security reports and pass those titles and urls to TRAM.
 
-CHASE integrates the Feedly API. This allows for the aggregation of blogs from well known and reliable security blogs such as FireEye Threat Research and more. You'll need to get free
-access token from Feedly by signing up (or if you really want to beef up your TRAM instance, opt for an enterprise token). However, the free token should be more than enough for daily
-requests.  
+### Feeds for PoC
 
-You simply send a POST request with the following body:
+These are the preloaded feeds in config/feeds.json. Of course, this JSON file is completely customizable based on what your needs are. Just keep in mind that the goal of CHASE is to feed TRAM with as many relevant reports as possible to help train the model.
 
-{
-    "token": "your_token"
-}
-
-From there, CHASE will incorporate your token in subsequent requests to the supported feeds (over HTTPS) in config/feeds.json. 
+FireEye Threat Research
+Darknet
+Schneier on Security
+Sophos Labs
 
 Usage
 ---------------
-`cd tests\`  
-`go test` # verify app passes all tests  
-`cd cmd\chase`  
-`go build`  
-`./chase.exe`  
 
-Send a POST to http://localhost:7000/ 
+1. Get a developer access token to authenticate to the Feedly Cloud API (it's free).
+2. Start TRAM.
+3. Configure config/feeds.json with more relevant Feedly feeds.
+4. Build CHASE. 
+``` 
+cd cmd\chase  
+go build  
+./chase.exe
+```  
+5. 
+Send a POST to http://localhost:7000/ with the following body:  
+
+```
+{
+    "token": "your_developer_token"
+}
+```
+
+That's it! Now let TRAM do its thing!
 
 Impact
 ----------------
 
-There is an immense backlog of threat reports that the ATT&CK team (and others) still need to analyze and map to ATT&CK to strengthen their detection mechanisms. CHASE will help alleviate the still manual process of finding relevant reports to
-provide to TRAM by searching the Internet for them. 
+There is an immense backlog of threat reports that the ATT&CK team (and others) still need to analyze and map to ATT&CK to strengthen their detection mechanisms. CHASE will help alleviate the still manual process of finding relevant reports to provide to TRAM by searching the Internet for them. 
 
-The analyst can then predominantly focus on verifying TRAM's results and continuing to train its model. 
+The analyst can then focus on verifying TRAM's results and continuing to train its model. 
 
 
 TODO
