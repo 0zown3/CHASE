@@ -18,10 +18,10 @@ CHASE integrates the Feedly Cloud API. Feedly is a service that aggregates blogs
 
 These are the preloaded feeds in config/feeds.json. Of course, this JSON file is completely customizable based on what your needs are. Just keep in mind that the goal of CHASE is to feed TRAM with as many relevant reports as possible to help train the model.
 
-FireEye Threat Research
-Darknet
-Schneier on Security
-Sophos Labs
+- FireEye Threat Research
+- Darknet
+- Schneier on Security
+- Sophos Labs
 
 Usage
 ---------------
@@ -49,10 +49,9 @@ That's it! Now let TRAM do its thing!
 Impact
 ----------------
 
-There is an immense backlog of threat reports that the ATT&CK team (and others) still need to analyze and map to ATT&CK to strengthen their detection mechanisms. CHASE will help alleviate the still manual process of finding relevant reports to provide to TRAM by searching the Internet for them. 
+There is an immense backlog of threat reports that the ATT&CK team (and others) still need to analyze and map to ATT&CK to strengthen their detection mechanisms. CHASE will help alleviate the still manual process of finding relevant reports to provide to TRAM by searching the Internet for them.  
 
-The analyst can then focus on verifying TRAM's results and continuing to train its model. 
-
+CHASE also segments this process from TRAM, that way, TRAM can focus directly on effectively detecting TTPs rather than worry about where it gets these reports from as well. This plugin then makes it more practical to incorporate TRAM in a microservice architecture. It would then become trivial to automate interaction with CHASE so it consistently provides reports to TRAM.
 
 TODO
 --------------
