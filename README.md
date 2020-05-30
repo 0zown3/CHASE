@@ -26,14 +26,13 @@ These are the preloaded feeds in config/feeds.json. Of course, this JSON file is
 Usage
 ---------------
 
+0. Install docker: `sudo apt install docker.io`  
 1. Get a developer access token to authenticate to the Feedly Cloud API (it's free).
 2. Start TRAM.
 3. Configure config/feeds.json with more relevant Feedly feeds.
-4. Build CHASE. 
+4. Build CHASE.
 ``` 
-cd cmd\chase  
-go build  
-./chase.exe
+./build.sh # this script will build the chase:latest image and start a container
 ```  
 5. 
 Send a POST to http://localhost:7000/ with the following body:  
@@ -52,7 +51,3 @@ Impact
 There is an immense backlog of threat reports that the ATT&CK team (and others) still need to analyze and map to ATT&CK to strengthen their detection mechanisms. CHASE will help alleviate the still manual process of finding relevant reports to provide to TRAM by searching the Internet for them.  
 
 CHASE also segments this process from TRAM, that way, TRAM can focus directly on effectively detecting TTPs rather than worry about where it gets these reports from as well. This plugin then makes it more practical to incorporate TRAM in a microservice architecture. It would then become trivial to automate interaction with CHASE so it consistently provides reports to TRAM.
-
-TODO
---------------
-- Dockerize CHASE.
